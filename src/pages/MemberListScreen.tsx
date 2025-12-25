@@ -12,6 +12,10 @@ interface Member {
   lastPaymentDate: string;
   lastPaymentAmount: number;
   lastPaymentUPI: string;
+  paymentHistory: Array<{
+    date: string;
+    amount: number;
+  }>;
 }
 
 interface PaymentPopupState {
@@ -145,10 +149,10 @@ export const MemberListScreen: React.FC = () => {
       {/* Payment Popup Modal */}
       {paymentPopup.isOpen && selectedPaymentMember && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
+          <div className="bg-white rounded-lg shadow-xl p-6 w-full max-w-2xl max-h-96 overflow-y-auto">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Payment Details</h2>
             
-            <div className="space-y-3">
+            <div className="space-y-3 mb-6">
               <div>
                 <p className="text-gray-600 text-sm">Member Name</p>
                 <p className="font-medium text-gray-900">{selectedPaymentMember.name}</p>
@@ -159,19 +163,48 @@ export const MemberListScreen: React.FC = () => {
                 <p className="font-medium text-gray-900">{selectedPaymentMember.paymentsCompleted}</p>
               </div>
 
-              <div className="border-t pt-3">
-                <p className="text-gray-600 text-sm">Last Payment</p>
-                <p className="font-medium text-gray-900">{new Date(selectedPaymentMember.lastPaymentDate).toLocaleDateString()}</p>
-              </div>
-
-              <div>
-                <p className="text-gray-600 text-sm">Amount</p>
-                <p className="font-medium text-gray-900">₹{selectedPaymentMember.lastPaymentAmount.toLocaleString()}</p>
-              </div>
-
               <div>
                 <p className="text-gray-600 text-sm">UPI ID</p>
                 <p className="font-medium text-gray-900 break-all">{selectedPaymentMember.lastPaymentUPI}</p>
+              </div>
+            </div>
+
+            {/* Payment History Table */}
+            <div className="border-t pt-4">
+              <h3 className="font-bold text-gray-900 mb-3">Payment History (Last 5)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-100 border-b">
+                    <tr>
+                      <th className="px-4 py-2 text-left font-semibold text-gray-900">Date</th>
+                      <th className="px-4 py-2 text-right font-semibold text-gray-900">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {selectedPaymentMember.paymentHistory && selectedPaymentMember.paymentHistory.length > 0 ? (
+                      selectedPaymentMember.paymentHistory.map((payment, index) => (
+                        <tr key={index} className="border-b hover:bg-gray-50">
+                          <td className="px-4 py-2 text-gray-900">
+                            {new Date(payment.date).toLocaleDateString('en-IN', {
+                              day: '2-digit',
+                              month: '2-digit',
+                              year: 'numeric'
+                            })}
+                          </td>
+                          <td className="px-4 py-2 text-right text-gray-900 font-medium">
+                            ₹{payment.amount.toLocaleString('en-IN')}
+                          </td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan={2} className="px-4 py-3 text-center text-gray-500 text-sm">
+                          No payment history available
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
               </div>
             </div>
 

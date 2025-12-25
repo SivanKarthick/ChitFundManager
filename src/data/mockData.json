@@ -32,7 +32,14 @@
       "lastPaymentDate": "2024-12-10",
       "lastPaymentAmount": 5000,
       "lastPaymentUPI": "kumar@upi",
-      "eligible": ["group1", "group2"]
+      "eligible": ["group1", "group2"],
+      "paymentHistory": [
+        {"date": "2024-12-10", "amount": 5000},
+        {"date": "2024-11-10", "amount": 5000},
+        {"date": "2024-10-10", "amount": 5000},
+        {"date": "2024-09-10", "amount": 5000},
+        {"date": "2024-08-10", "amount": 5000}
+      ]
     },
     {
       "id": "mem2",
@@ -46,7 +53,14 @@
       "lastPaymentDate": "2024-12-08",
       "lastPaymentAmount": 8000,
       "lastPaymentUPI": "ravi@upi",
-      "eligible": ["group1"]
+      "eligible": ["group1"],
+      "paymentHistory": [
+        {"date": "2024-12-08", "amount": 8000},
+        {"date": "2024-11-08", "amount": 8000},
+        {"date": "2024-10-08", "amount": 8000},
+        {"date": "2024-09-08", "amount": 8000},
+        {"date": "2024-08-08", "amount": 8000}
+      ]
     },
     {
       "id": "mem3",
@@ -60,7 +74,12 @@
       "lastPaymentDate": "2024-12-15",
       "lastPaymentAmount": 10000,
       "lastPaymentUPI": "priya@upi",
-      "eligible": ["group2"]
+      "eligible": ["group2"],
+      "paymentHistory": [
+        {"date": "2024-12-15", "amount": 10000},
+        {"date": "2024-11-15", "amount": 10000},
+        {"date": "2024-10-15", "amount": 10000}
+      ]
     },
     {
       "id": "mem4",
@@ -74,7 +93,14 @@
       "lastPaymentDate": "2024-12-12",
       "lastPaymentAmount": 12000,
       "lastPaymentUPI": "arjun@upi",
-      "eligible": ["group1", "group2"]
+      "eligible": ["group1", "group2"],
+      "paymentHistory": [
+        {"date": "2024-12-12", "amount": 12000},
+        {"date": "2024-11-12", "amount": 12000},
+        {"date": "2024-10-12", "amount": 12000},
+        {"date": "2024-09-12", "amount": 12000},
+        {"date": "2024-08-12", "amount": 12000}
+      ]
     }
   ],
   "reminders": [

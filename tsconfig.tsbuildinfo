@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/context/navigationcontext.tsx","./src/pages/addeditmemberscreen.tsx","./src/pages/dashboardscreen.tsx","./src/pages/grouplistscreen.tsx","./src/pages/loginscreen.tsx","./src/pages/memberlistscreen.tsx","./src/pages/remindersetupscreen.tsx","./src/pages/sendreminderscreen.tsx"],"version":"5.9.3"}

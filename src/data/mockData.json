@@ -1,0 +1,105 @@
+{
+  "groups": [
+    {
+      "id": "group1",
+      "name": "2 Lakh Chit",
+      "amount": 200000,
+      "dueDate": 10,
+      "place": "Main Office",
+      "totalMembers": 20,
+      "messageTemplate": "Dear {{name}}, your chit due for {{group}} is payable on {{date}} at {{place}}. Please be on time"
+    },
+    {
+      "id": "group2",
+      "name": "5 Lakh Chit",
+      "amount": 500000,
+      "dueDate": 15,
+      "place": "Conference Room",
+      "totalMembers": 25,
+      "messageTemplate": "Dear {{name}}, your chit due for {{group}} is payable on {{date}} at {{place}}. Please be on time"
+    }
+  ],
+  "members": [
+    {
+      "id": "mem1",
+      "groupId": "group1",
+      "name": "Kumar",
+      "primary": "98765xxxx",
+      "alternate": "81234xxxx",
+      "joiningDate": "2023-01-15",
+      "notes": "Senior member",
+      "paymentsCompleted": 5,
+      "lastPaymentDate": "2024-12-10",
+      "lastPaymentAmount": 5000,
+      "lastPaymentUPI": "kumar@upi",
+      "eligible": ["group1", "group2"]
+    },
+    {
+      "id": "mem2",
+      "groupId": "group1",
+      "name": "Ravi",
+      "primary": "97845xxxx",
+      "alternate": null,
+      "joiningDate": "2023-03-20",
+      "notes": "Regular member",
+      "paymentsCompleted": 8,
+      "lastPaymentDate": "2024-12-08",
+      "lastPaymentAmount": 8000,
+      "lastPaymentUPI": "ravi@upi",
+      "eligible": ["group1"]
+    },
+    {
+      "id": "mem3",
+      "groupId": "group2",
+      "name": "Priya",
+      "primary": "99876xxxx",
+      "alternate": "82345xxxx",
+      "joiningDate": "2023-05-10",
+      "notes": "New member",
+      "paymentsCompleted": 3,
+      "lastPaymentDate": "2024-12-15",
+      "lastPaymentAmount": 10000,
+      "lastPaymentUPI": "priya@upi",
+      "eligible": ["group2"]
+    },
+    {
+      "id": "mem4",
+      "groupId": "group2",
+      "name": "Arjun",
+      "primary": "98765xxxx",
+      "alternate": "80123xxxx",
+      "joiningDate": "2023-07-01",
+      "notes": "Active member",
+      "paymentsCompleted": 6,
+      "lastPaymentDate": "2024-12-12",
+      "lastPaymentAmount": 12000,
+      "lastPaymentUPI": "arjun@upi",
+      "eligible": ["group1", "group2"]
+    }
+  ],
+  "reminders": [
+    {
+      "id": "reminder1",
+      "groupId": "group1",
+      "memberId": "mem1",
+      "sentDate": "2024-12-20",
+      "status": "sent",
+      "channel": "primary",
+      "message": "Dear Kumar, your chit due for 2 Lakh Chit is payable on 10th at Main Office. Please be on time"
+    },
+    {
+      "id": "reminder2",
+      "groupId": "group1",
+      "memberId": "mem2",
+      "sentDate": "2024-12-20",
+      "status": "sent",
+      "channel": "primary",
+      "message": "Dear Ravi, your chit due for 2 Lakh Chit is payable on 10th at Main Office. Please be on time"
+    }
+  ],
+  "dashboard": {
+    "totalGroups": 2,
+    "totalMembers": 50,
+    "monthlyPendingReminders": 12
+  }
+}
